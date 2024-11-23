@@ -1,0 +1,19 @@
+package bankAccountPackage;
+
+import java.util.Vector;
+
+public class TestingClasses {
+
+	public static void main(String[] args) {
+		Vector<NormalAccount> normal_accounts = new Vector<>();
+		NormalAccount duyanh0 = new NormalAccount("duyanh0","20225596-0",500000);
+		normal_accounts.add(duyanh0);
+		//fine!
+		NormalAccount duyanh1 = new NormalAccount("duyanh1","20225596-1",2);
+		normal_accounts.add(duyanh1);
+		//it tries to initiate for duyanh1 with balance = 50000
+		duyanh0.withdraw(-10000);
+		duyanh0.withdraw(-1000000);
+	}
+
+}

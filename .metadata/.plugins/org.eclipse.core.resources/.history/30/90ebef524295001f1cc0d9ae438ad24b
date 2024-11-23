@@ -1,0 +1,34 @@
+package bankAccountPackage;
+
+import java.util.Vector;
+
+public class TestingClasses {
+
+	public static void main(String[] args) {
+		Vector<NormalAccount> normal_accounts = new Vector<>();
+		Vector<SavingAccount> saving_accounts = new Vector<>();
+		
+		NormalAccount duyanh0 = new NormalAccount("duyanh0","20225596-0",500000);
+		normal_accounts.add(duyanh0);
+		//fine!
+		NormalAccount duyanh1 = new NormalAccount("duyanh1","20225596-1",2);
+		normal_accounts.add(duyanh1);
+		//it tries to initiate for duyanh1 with balance = 50000
+		duyanh0.withdraw(0);
+		duyanh0.withdraw(-1000000);
+		//can't withdraw!
+		duyanh0.withdraw(1000);
+		//fine!
+		duyanh1.deposit(1000);
+		//fine
+		duyanh1.deposit(0);
+		//error
+		SavingAccount duyanh2 = new SavingAccount("duyanh2","20225596-2",100000,0.01);
+		saving_accounts.add(duyanh2);
+		//fine!
+		SavingAccount duyanh3 = new SavingAccount("duyanh3","20225596-3",500000,0.01);
+		saving_accounts.add(duyanh3);
+		//it tries to initiate for duyanh1 with balance = 50000
+	}
+
+}

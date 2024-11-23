@@ -1,0 +1,14 @@
+package bankAccountPackage;
+
+import java.util.Vector;
+
+public class TestingClasses {
+
+	public static void main(String[] args) {
+		Vector<NormalAccount> normal_accounts = new Vector<>();
+		NormalAccount duyanh = new NormalAccount("duyanh","20225596",50000);
+		normal_accounts.add(duyanh);
+		
+	}
+
+}

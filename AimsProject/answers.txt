@@ -1,0 +1,40 @@
+<<<<<<< HEAD
+Question located in step "8. Create Constructor method"
+Q: If you create a constructor method to build a DVD by title then create a constructor method to build a DVD by category. Does JAVA allow you to do this?
+A: For example of my DVD class:
+public class DigitalVideoDisc {
+	private String title;
+	private String category;
+	private String director;
+	private int length;
+	private float cost;
+}
+Assuming the constructor method using title, is 
+"public void DigitalVideoDisc(String title) { //init commands };"
+And the constructor method using category, is 
+"public void DigitalVideoDisc(String category) { //init commands };"
+Java does not allowed to do this, because, for example:
+"DigitalVideoDisc("Hello");"
+It would not know which constructor method would be used, since, "Hello" is a string, and 2 of the constructors requires to be fed with a string as an only parameter. To fix this in my opinion, change the name of the constructor methods so that initiating DVD using title and category would use different method name instead. Example:
+"public void DVD_init_title(string title);
+=======
+Question located in step "8. Create Constructor method"
+Q: If you create a constructor method to build a DVD by title then create a constructor method to build a DVD by category. Does JAVA allow you to do this?
+A: For example of my DVD class:
+public class DigitalVideoDisc {
+	private String title;
+	private String category;
+	private String director;
+	private int length;
+	private float cost;
+}
+Assuming the constructor method using title, is 
+"public void DigitalVideoDisc(String title) { //init commands };"
+And the constructor method using category, is 
+"public void DigitalVideoDisc(String category) { //init commands };"
+Java does not allowed to do this, because, for example:
+"DigitalVideoDisc("Hello");"
+It would not know which constructor method would be used, since, "Hello" is a string, and 2 of the constructors requires to be fed with a string as an only parameter. To fix this in my opinion, change the name of the constructor methods so that initiating DVD using title and category would use different method name instead. Example:
+"public void DVD_init_title(string title);
+>>>>>>> e9c05efd0c90db8b4aa8744d89af25f8ae47e28f
+public void DVD_init_category(string category);"

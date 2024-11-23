@@ -1,0 +1,39 @@
+package bankAccountPackage;
+
+public class NormalAccount {
+	protected String ownerName;
+    protected String accountNumber;
+    protected double balance;
+    protected static final double MINIMUM_BALANCE = 50000;
+    protected static final double WITHDRAW_FEE = 5000;
+    public NormalAccount(String ownerName, String accountNumber, double initialBalance) {
+        this.ownerName = ownerName;
+        this.accountNumber = accountNumber;
+        this.balance = initialBalance < MINIMUM_BALANCE ? MINIMUM_BALANCE : initialBalance;
+        //preventing error like when trying to init with initialBalance < 50000, which is minimum required
+        System.out.println("Normal Account for user "+ ownerName +" initiated!");
+    }
+    public void deposit(double amount) {
+        if (amount > 0) { //avoiding cases when deposing negative amount
+            balance += amount;
+            System.out.println("Deposited successfully! Now you have " + balance + " VND!");
+            return;
+        }
+        else System.out.println("Cannot deposit non-positive amount of cash!");
+        return;
+    }
+    public void withdraw(double amount) {
+        if (amount > 0 && (balance - amount - WITHDRAW_FEE) >= MINIMUM_BALANCE) {
+        	//avoiding cases when withdrawing negative amount
+        	//and when the balance would be lower than 50000VND
+            balance -= (amount + WITHDRAW_FEE);
+            System.out.println("Withdrawing "+ amount +" VND successfullly! "+ 
+            " Now you have "+ balance+ " VND!");
+            return;
+        }
+        else System.out.println("Cannot withdraw!");
+    }
+    public double getBalance() {
+        return balance;
+    }
+}

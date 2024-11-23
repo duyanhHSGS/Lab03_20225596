@@ -1,0 +1,19 @@
+package bankAccountPackage;
+
+public class SavingAccount extends NormalAccount {
+    private double annualInterestRate = 0.01;
+
+    public SavingAccount(String ownerName, String accountNumber, double initialBalance, double annualInterestRate) {
+        super(ownerName, accountNumber, initialBalance);
+        this.annualInterestRate = annualInterestRate;
+        System.out.println("Saving Account for "+ ownerName +" initiated!");
+    }
+    public double calculateMonthlyInterest() {
+        return getBalance() * (annualInterestRate / 12);
+    }
+    public void withdraw(double amount) {
+        System.out.println("Withdrawing is not allowed in saving accounts.");
+    }
+
+    // Additional methods specific to SavingAccount if necessary
+}
