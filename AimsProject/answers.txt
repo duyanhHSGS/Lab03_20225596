@@ -1,40 +1,18 @@
-<<<<<<< HEAD
-Question located in step "8. Create Constructor method"
-Q: If you create a constructor method to build a DVD by title then create a constructor method to build a DVD by category. Does JAVA allow you to do this?
-A: For example of my DVD class:
-public class DigitalVideoDisc {
-	private String title;
-	private String category;
-	private String director;
-	private int length;
-	private float cost;
+Question located: Try to add a method addDigitalVideoDisc which allows to pass an arbitrary number of arguments for dvd. Compare to an array parameter. What do you prefer in this case?
+
+public void addDigitalVideoDisc(DigitalVideoDisc... dvds) {
+    for (DigitalVideoDisc dvd : dvds) {
+        addDigitalVideoDisc(dvd);
+    }
 }
-Assuming the constructor method using title, is 
-"public void DigitalVideoDisc(String title) { //init commands };"
-And the constructor method using category, is 
-"public void DigitalVideoDisc(String category) { //init commands };"
-Java does not allowed to do this, because, for example:
-"DigitalVideoDisc("Hello");"
-It would not know which constructor method would be used, since, "Hello" is a string, and 2 of the constructors requires to be fed with a string as an only parameter. To fix this in my opinion, change the name of the constructor methods so that initiating DVD using title and category would use different method name instead. Example:
-"public void DVD_init_title(string title);
-=======
-Question located in step "8. Create Constructor method"
-Q: If you create a constructor method to build a DVD by title then create a constructor method to build a DVD by category. Does JAVA allow you to do this?
-A: For example of my DVD class:
-public class DigitalVideoDisc {
-	private String title;
-	private String category;
-	private String director;
-	private int length;
-	private float cost;
-}
-Assuming the constructor method using title, is 
-"public void DigitalVideoDisc(String title) { //init commands };"
-And the constructor method using category, is 
-"public void DigitalVideoDisc(String category) { //init commands };"
-Java does not allowed to do this, because, for example:
-"DigitalVideoDisc("Hello");"
-It would not know which constructor method would be used, since, "Hello" is a string, and 2 of the constructors requires to be fed with a string as an only parameter. To fix this in my opinion, change the name of the constructor methods so that initiating DVD using title and category would use different method name instead. Example:
-"public void DVD_init_title(string title);
->>>>>>> e9c05efd0c90db8b4aa8744d89af25f8ae47e28f
-public void DVD_init_category(string category);"
+This is better, no array needed to be initialized, easy to use!
+
+Question located: Is JAVA a Pass by Value or a Pass by Reference programming language? 
+- By value, all the time
+- Passing a primitive datatype, the method would be given a copy, of that value, not an address that stores it
+- Passing an object, the method would be given a copy, of that address, that stores it
+Question located: After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two objects still remain?
+- It just passed the address of the object, and swapped them locally, not in the big main
+Question located: After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the JungleDVD changed?
+- Because of the "dvd.setTitle(title);" the dvd in here is jungleDVD, so it modifies its name
+- The codes "dvd = new DigitalVideoDisc(oldTitle);" just make a new dvd object, and make the variable dvd points to it (by the time, it doesn't do anything meaningful for now)
