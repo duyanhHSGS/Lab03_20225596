@@ -13,6 +13,16 @@ public class CartTest {
 		DigitalVideoDisc dvd3= new DigitalVideoDisc("Aladin", "Animation", 18.99f);
 		cart.addDigitalVideoDisc(dvd3);
 		cart.print();
+		
+        // Search by ID
+        System.out.println("\nSearch by ID:");
+        cart.searchById(2); // Star Wars
+        cart.searchById(5); // No match
+
+        // Search by Title
+        System.out.println("\nSearch by Title:");
+        cart.searchByTitle("Aladin"); // Aladin
+        cart.searchByTitle("Unknown"); // No match
 	}
 
 }

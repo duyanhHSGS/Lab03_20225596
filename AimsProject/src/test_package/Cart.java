@@ -64,4 +64,30 @@ public class Cart {
 	    System.out.println("Total cost: " + totalCost() + " $");
 	    System.out.println("***************************************************");
 	}
+// implementing search feature:
+	public void searchById(int id) {
+	    boolean found = false;
+	    for (DigitalVideoDisc disc : itemOrdered) {
+	        if (disc.getId() == id) {
+	            System.out.println("DVD Found: " + disc);
+	            found = true;
+	            break;
+	        }
+	    }
+	    if (!found) {
+	        System.out.println("No DVD found with ID: " + id);
+	    }
+	}
+	public void searchByTitle(String title) {
+	    boolean found = false;
+	    for (DigitalVideoDisc disc : itemOrdered) {
+	        if (disc.isMatch(title)) {
+	            System.out.println("DVD Found: " + disc);
+	            found = true;
+	        }
+	    }
+	    if (!found) {
+	        System.out.println("No DVD found with title: " + title);
+	    }
+	}
 }
