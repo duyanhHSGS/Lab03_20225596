@@ -1,3 +1,5 @@
+Disk 1,Categ3,Director3,150,10.99
+Disk 2,Categ4,Director4,120,8.99
 Disk 3,Categ3,Director3,150,10.99
 Disk 4,Categ4,Director4,120,8.99
 Disc 5,Category 5,Director 5,105,15.99
