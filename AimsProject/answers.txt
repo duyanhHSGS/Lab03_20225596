@@ -16,3 +16,6 @@ Question located: After the call of swap(jungleDVD, cinderellaDVD) why does the 
 Question located: After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the JungleDVD changed?
 - Because of the "dvd.setTitle(title);" the dvd in here is jungleDVD, so it modifies its name
 - The codes "dvd = new DigitalVideoDisc(oldTitle);" just make a new dvd object, and make the variable dvd points to it (by the time, it doesn't do anything meaningful for now)
+
+Question located: Write a toString() method for the DigitalVideoDisc class. What should be the return type of this method?
+- String

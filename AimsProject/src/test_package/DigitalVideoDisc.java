@@ -29,7 +29,7 @@ public class DigitalVideoDisc {
 	public float getCost() {
 		return cost;
 	}	
-	// update this thing so the following constructors overload this 
+	// update this thing so the following constructors overload this
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
         this.title = title;
         this.category = category;
@@ -45,6 +45,13 @@ public class DigitalVideoDisc {
     }
     public DigitalVideoDisc(String title, String category, float cost) {
         this(title, category, null, 0, cost); 
+    }
+    public String toString() {
+        return "DVD - " + title + 
+               " - " + (category != null ? category : "Unknown") +
+               " - " + (director != null ? director : "Unknown") +
+               " - " + (length > 0 ? length + " mins" : "Unknown Length") +
+               ": " + cost + " $";
     }
 
 }

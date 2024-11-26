@@ -21,18 +21,23 @@ public class Cart {
 	}
 	
 	// this overload the previous method
-	public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList) {
-	    for (DigitalVideoDisc disc : dvdList) {
-	        addDigitalVideoDisc(disc); // reuse the previous method
-	    }
-	}
+//	public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList) {
+//	    for (DigitalVideoDisc disc : dvdList) {
+//	        addDigitalVideoDisc(disc); // reuse the previous method
+//	    }
+//	}
 	// this overload the pre-previous method 
 	public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
 	    System.out.println("Adding two discs to the cart... Waiting");
 	    addDigitalVideoDisc(dvd1); 
 	    addDigitalVideoDisc(dvd2); 
 	}
-
+	//using varargs
+	public void addDigitalVideoDisc(DigitalVideoDisc... dvds) {
+	    for (DigitalVideoDisc dvd : dvds) {
+	        addDigitalVideoDisc(dvd); // Reuse the single-disc addition method
+	    }
+	}
 	public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
 	    if (itemOrdered.remove(disc)) {
 	        qtyOrdered--;
@@ -47,5 +52,16 @@ public class Cart {
 			total+= itemOrdered.get(i).getCost();
 		}
 		return total;
+	}
+// implementing print feature:
+	public void print() {
+	    System.out.println("***********************CART***********************");
+	    System.out.println("Ordered Items:");
+	    for (int i = 0; i < itemOrdered.size(); i++) {
+	        DigitalVideoDisc disc = itemOrdered.get(i);
+	        System.out.println((i + 1) + ". " + disc);
+	    }
+	    System.out.println("Total cost: " + totalCost() + " $");
+	    System.out.println("***************************************************");
 	}
 }
