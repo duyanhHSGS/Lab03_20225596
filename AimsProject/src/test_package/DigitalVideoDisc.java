@@ -53,7 +53,9 @@ public class DigitalVideoDisc {
                " - " + (length > 0 ? length + " mins" : "Unknown Length") +
                ": " + cost + " $";
     }
-
+    public boolean isMatch(String title) {
+        return this.title != null && this.title.equalsIgnoreCase(title);
+    }
 }
 
 	
