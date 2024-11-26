@@ -19,6 +19,19 @@ public class Cart {
 			System.out.println("Your cart is almost full! (" + qtyOrdered + "/" + MAX_NUMBER_ORDERED + ")");
 		}
 	}
+	
+	// this overload the previous method
+	public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList) {
+	    for (DigitalVideoDisc disc : dvdList) {
+	        addDigitalVideoDisc(disc); // reuse the previous method
+	    }
+	}
+	// this overload the pre-previous method 
+	public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
+	    System.out.println("Adding two discs to the cart... Waiting");
+	    addDigitalVideoDisc(dvd1); 
+	    addDigitalVideoDisc(dvd2); 
+	}
 
 	public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
 	    if (itemOrdered.remove(disc)) {
